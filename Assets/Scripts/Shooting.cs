@@ -16,7 +16,6 @@ public class Shooting : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(canShoot){

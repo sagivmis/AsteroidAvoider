@@ -22,9 +22,8 @@ public class Powerup : MonoBehaviour
         if(gameObject.tag == "Shrink"){
             player.transform.localScale /= 1.4f;
         }
-        if(gameObject.tag == "Armor"){    
-            PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-            playerHealth.increaseLifeByFloat(12f);
+        if(gameObject.tag == "Armor"){
+            PlayerHealth.increaseLifeByFloat(12f);
             Destroy(animation);
             Destroy(gameObject);
         }

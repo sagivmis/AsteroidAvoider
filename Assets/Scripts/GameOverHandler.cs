@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class GameOverHandler : MonoBehaviour
 {   
+  [SerializeField] private Button continueBtn;
+  [SerializeField] private GameObject player;
     [SerializeField] private TMP_Text gameOverText;
     [SerializeField] private ScoreSystem scoreSystem;
     [SerializeField] private GameObject gameOverDisplay;
@@ -16,8 +18,21 @@ public class GameOverHandler : MonoBehaviour
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private TMP_Text beatHighScoreText;
     [SerializeField] private TMP_Text highScoreText;
+    [SerializeField] private PlayerHealth playerHealth;
     private float timer=0;
     private bool didShow = false;
+    public void continueGame(){
+      scoreSystem.startTimer();
+      player.transform.position = Vector3.zero;
+      player.SetActive(true);
+      playerHealth.setLife(100f);
+      HealthBarScript.setHealthBarValue(playerHealth.getLife()/100);
+
+      asteroidSpawner.enabled = true;
+      gameOverDisplay.gameObject.SetActive(false); 
+    }
+
+
     public void endGame(){
         asteroidSpawner.enabled = false;
         powerupSpawner.enabled = false;
@@ -38,6 +53,11 @@ public class GameOverHandler : MonoBehaviour
     public void playAgain(){
       SceneManager.LoadScene(1);
       beatHighScoreText.gameObject.SetActive(false);
+  }
+
+  public void continueButton(){
+    AdManager.Instance.showAd(this);
+    continueBtn.interactable = false;
   }
     public void mainMenu(){
       SceneManager.LoadScene(0);

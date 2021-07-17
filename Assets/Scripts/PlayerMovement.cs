@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
         // VelocityBarScript.setVelocityBarValue(magnitude/maxVelocity);
         velocity = (transform.position - prevPos) / Time.deltaTime;
         prevPos = transform.position;
-        Debug.Log(rb.velocity.magnitude); //VELOCITY
     }
 
     void drawBackShip(){

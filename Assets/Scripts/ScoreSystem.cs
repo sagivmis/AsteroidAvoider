@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -27,6 +28,12 @@ public class ScoreSystem : MonoBehaviour
             PlayerPrefs.SetInt(HighScoreKey, Mathf.FloorToInt(score));
         }
     }
+
+    public void startTimer()
+    {
+        shouldCount = true;
+    }
+
     public int stopMultiply(){
         shouldCount = false;
         scoreText.text=string.Empty;
