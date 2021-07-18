@@ -7814,7 +7814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc4ebc1a69249f4cb835235972f4d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testMode: 1
+  testMode: 0
 --- !u!4 &2050030059
 Transform:
   m_ObjectHideFlags: 0
@@ -8341,6 +8341,7 @@ MonoBehaviour:
   mainMenuButton: {fileID: 1072834163}
   beatHighScoreText: {fileID: 1857770015}
   highScoreText: {fileID: 1480739428}
+  playerHealth: {fileID: 2105757602}
 --- !u!4 &2139621792
 Transform:
   m_ObjectHideFlags: 0
